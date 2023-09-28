@@ -1,21 +1,26 @@
 # 🌿 Shurale7b-v1: Narrative based chit-chat model
 
 Developed by [@BobaZooba](https://huggingface.co/BobaZooba)
-**I'm open to work:
-** [My CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing) | [My LinkedIn](https://www.linkedin.com/in/boriszubarev/) | [Advising](https://komplete.framer.ai)
+
+I'm open to work &
+partnership: [My CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing) | [My LinkedIn](https://www.linkedin.com/in/boriszubarev/) | [Advising](https://komplete.framer.ai)
+
+[GitHub Repo](https://github.com/KompleteAI/shurale)
+
+Model based on [Mistral-7B](https://huggingface.co/mistralai/Mistral-7B-v0.1)
 
 [<img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/JudU3rrPP5i87CfwINANO.png" alt="Powered by X—LLM" width="175" height="32"/>](https://github.com/KompleteAI/xllm)
 
 # 🪄 About
 
-| **HuggingFace Hub** | **7b**                                                        | **7b-gptq**                                                 | **13b**     | **13b-gptq** |
-|---------------------|---------------------------------------------------------------|-------------------------------------------------------------|-------------|--------------|
-| **Shurale-v1**      | [Link](https://huggingface.co/KompleteAI/Shurale7b-v1) (this) | [Link](https://huggingface.co/KompleteAI/Shurale7b-v1-GPTQ) | Coming soon | Coming soon  |
-| **Shurale-v2**      | Coming soon                                                   | Coming soon                                                 | Coming soon | Coming soon  |
+| **HuggingFace Hub** | **7b**                                                 | **7b-gptq**                                                 | **13b**     | **13b-gptq** |
+|---------------------|--------------------------------------------------------|-------------------------------------------------------------|-------------|--------------|
+| **Shurale-v1**      | [Link](https://huggingface.co/KompleteAI/Shurale7b-v1) | [Link](https://huggingface.co/KompleteAI/Shurale7b-v1-GPTQ) | Coming soon | Coming soon  |
+| **Shurale-v2**      | Coming soon                                            | Coming soon                                                 | Coming soon | Coming soon  |
 
 <div align="justify">
 
-  <img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/EmwEd5khHmzUTatA_tXB0.png" alt="Shurale" width="200" height="200" style="float: right; float: bottom; margin-left: 50px;" />
+<img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/EmwEd5khHmzUTatA_tXB0.png" alt="Shurale" width="200" height="200" style="float: right; float: bottom; margin-left: 50px;" />
 
 **Shurale** is a dialogue model perfect for engaging in realistic and wide-reaching discussions.
 The model's strength comes from its 7-billion parameter foundation (based on **Llama 2**), which was meticulously *
@@ -63,30 +68,30 @@ Training examples consisted of both the narrative and the dialogue itself, with 
 indicated.
 
 <table>
-  <tr>
-    <td>
-      Narrative
-    </td>
-    <td>
-      A description of the situation within the dialogue
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Characters names
-    </td>
-    <td>
-      A list of names of the characters participating in the dialogue
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Phrases
-    </td>
-    <td>
-      Phrases used by the participants in the dialogue
-    </td>
-  </tr>
+<tr>
+<td>
+Narrative
+</td>
+<td>
+A description of the situation within the dialogue
+</td>
+</tr>
+<tr>
+<td>
+Characters names
+</td>
+<td>
+A list of names of the characters participating in the dialogue
+</td>
+</tr>
+<tr>
+<td>
+Phrases
+</td>
+<td>
+Phrases used by the participants in the dialogue
+</td>
+</tr>
 </table>
 
 Narratives were deliberately omitted from 5% of the training examples, allowing the model to maintain a dialogue even
@@ -156,19 +161,19 @@ Run model as a service using HuggingFace 🤗 inference server:
 https://github.com/huggingface/text-generation-inference#get-started
 
 <details>
-  <summary>1. Start a docker container with the model</summary>
+<summary>1. Start a docker container with the model</summary>
 
 ### Docker
 
-  ```bash
-  model=KompleteAI/ShuraleBase
-  volume=$PWD/data
-  version=1.0.3  # please make sure you are using latest or stable version
+```bash
+model=KompleteAI/ShuraleBase
+volume=$PWD/data
+version=1.0.3  # please make sure you are using latest or stable version
 
-  docker run --gpus all --shm-size 1g -p 8080:80 -v \
+docker run --gpus all --shm-size 1g -p 8080:80 -v \
   $volume:/data ghcr.io/huggingface/text-generation-inference:$version \
   --model-id $model --max-batch-prefill-tokens 2048 --dtype bfloat16
-  ```
+```
 
 ### RunPod
 
@@ -178,7 +183,7 @@ that **port 8081** is used to run this template.
 https://www.runpod.io/console/gpu-cloud
 
 | Field             | Value                                                                                                                      |
-  |-------------------|----------------------------------------------------------------------------------------------------------------------------|
+|-------------------|----------------------------------------------------------------------------------------------------------------------------|
 | Container Image   | ghcr.io/huggingface/text-generation-inference:1.0.3                                                                        |
 | Docker Command    | --model-id KompleteAI/ShuraleBase --num-shard 1 --port 8081 --max-batch-prefill-tokens 2048 --dtype bfloat16 --json-output |
 | Container Disk    | 5                                                                                                                          |
@@ -190,10 +195,10 @@ https://www.runpod.io/console/gpu-cloud
 </details>
 
 <details>
-  <summary>2. Send request to the server and parse the response</summary>
+<summary>2. Send request to the server and parse the response</summary>
 
-  ```python
-  import requests
+```python
+import requests
 import json
 
 url = "127.0.0.1:8080/generate"
@@ -213,16 +218,16 @@ response = requests.post(url, headers=headers, data=json.dumps(data))
 
 print(response.json()["generated_text"].strip())
 # Hello, Anna! How was your evening?
-  ```
+```
 
 Or
 
-  ```bash
-  pip install text-generation
-  ```
+```bash
+pip install text-generation
+```
 
-  ```python
-  from text_generation import Client
+```python
+from text_generation import Client
 
 input_text = "Dialog between two colleagues: Emma and Anna.\nEmma:"
 
@@ -234,7 +239,7 @@ for response in client.generate_stream(input_text, max_new_tokens=20):
   if not response.token.special:
     text += response.token.text
 print(text)
-  ```
+```
 
 </details>
 
@@ -311,12 +316,12 @@ and gradient checkpointing.
 | DeepSpeed Offloading       | True          |
 
 <details>
-  <summary>Detailed config</summary>
+<summary>Detailed config</summary>
 
 ### General
 
 | Field                      | Value |
-  |----------------------------|-------|
+|----------------------------|-------|
 | save_safetensors           | True  |
 | use_gradient_checkpointing | True  |
 | trainer_key                | lm    |
@@ -330,7 +335,7 @@ and gradient checkpointing.
 ### Dataset
 
 | Field                    | Value         |
-  |--------------------------|---------------|
+|--------------------------|---------------|
 | dataset_key              | soda          |
 | train_local_path_to_data | ./train.jsonl |
 | eval_local_path_to_data  | None          |
@@ -339,7 +344,7 @@ and gradient checkpointing.
 ### Tokenizer
 
 | Field                  | Value |
-  |------------------------|-------|
+|------------------------|-------|
 | tokenizer_name_or_path | None  |
 | tokenizer_use_fast     | None  |
 | tokenizer_padding_side | right |
@@ -347,14 +352,14 @@ and gradient checkpointing.
 ### Collator
 
 | Field        | Value |
-  |--------------|-------|
+|--------------|-------|
 | collator_key | lm    |
 | max_length   | 2048  |
 
 ### Model
 
 | Field                 | Value                    |
-  |-----------------------|--------------------------|
+|-----------------------|--------------------------|
 | model_name_or_path    | meta-llama/Llama-2-7b-hf |
 | model_type            | llama                    |
 | use_flash_attention_2 | True                     |
@@ -364,7 +369,7 @@ and gradient checkpointing.
 ### bitsandbytes
 
 | Field                          | Value |
-  |--------------------------------|-------|
+|--------------------------------|-------|
 | model_name_or_pathload_in_8bit | False |
 | load_in_4bit                   | True  |
 | llm_int8_threshold             | 6.0   |
@@ -375,7 +380,7 @@ and gradient checkpointing.
 ### Training Arguments
 
 | Field                       | Value      |
-  |-----------------------------|------------|
+|-----------------------------|------------|
 | output_dir                  | ./outputs/ |
 | per_device_train_batch_size | 4          |
 | gradient_accumulation_steps | 4          |
@@ -394,13 +399,13 @@ and gradient checkpointing.
 ### W&B
 
 | Field           | Value |
-  |-----------------|-------|
+|-----------------|-------|
 | report_to_wandb | True  |
 
 ### LoRA
 
 | Field               | Value |
-  |---------------------|-------|
+|---------------------|-------|
 | apply_lora          | True  |
 | lora_rank           | 64    |
 | lora_alpha          | 32    |
@@ -459,14 +464,14 @@ context = list()
 
 while True:
   user_phrase = input("You: ")
-context.append(f"{user_prompt}: {user_phrase}")
-model_prompt = separator.join(
-  [narrative] + context[-max_context_length:] + [f"{bot_prompt}:"]
-)
-generated_response = generate(model_prompt)
-bot_phrase = f"{bot_prompt}: {generated_response}"
-context.append(bot_phrase)
-print(bot_phrase)
+  context.append(f"{user_prompt}: {user_phrase}")
+  model_prompt = separator.join(
+    [narrative] + context[-max_context_length:] + [f"{bot_prompt}:"]
+  )
+  generated_response = generate(model_prompt)
+  bot_phrase = f"{bot_prompt}: {generated_response}"
+  context.append(bot_phrase)
+  print(bot_phrase)
 ```
 
 ---
@@ -474,7 +479,7 @@ print(bot_phrase)
 # 📋 Dialog examples
 
 <details>
-  <summary>Example #1</summary>
+<summary>Example #1</summary>
 
 **Narrative:**
 Meilani is a loyal friend who can always be counted on. Meilani is someone you can confide in and trust to keep your
@@ -500,7 +505,7 @@ Thanks, Addy. I appreciate that.
 </details>
 
 <details>
-  <summary>Example #2</summary>
+<summary>Example #2</summary>
 
 **Narrative:**
 Kadee is respected by other people because she is a leader. She is confident and knows what she wants. People admire her
@@ -528,7 +533,7 @@ Yeah, I can imagine. So, what's new with you?
 </details>
 
 <details>
-  <summary>Example #3</summary>
+<summary>Example #3</summary>
 
 **Narrative:**
 Gabrielle was interested in hiking. She had always wanted to try it and had been told by many people that it was a great
@@ -552,7 +557,7 @@ Hey, thanks for coming with me on this hike! I've been wanting to try it for a w
 </details>
 
 <details>
-  <summary>Example #4</summary>
+<summary>Example #4</summary>
 
 **Narrative:**
 Elizah is obsessed with video games. She spends most of her free time playing them and she loves learning about
