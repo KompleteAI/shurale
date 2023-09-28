@@ -7,6 +7,8 @@ partnership: [My CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNa
 
 [GitHub Repo](https://github.com/KompleteAI/shurale)
 
+Model based on [Mistral-7B](https://huggingface.co/mistralai/Mistral-7B-v0.1)
+
 [<img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/JudU3rrPP5i87CfwINANO.png" alt="Powered by X—LLM" width="175" height="32"/>](https://github.com/KompleteAI/xllm)
 
 # 🪄 About
