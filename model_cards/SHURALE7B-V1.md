@@ -8,10 +8,10 @@ Developed by [@BobaZooba](https://huggingface.co/BobaZooba)
 
 # 🪄 About
 
-| **HuggingFace Hub** | **7b**                                                 | **7b-gptq**                                                 | **13b**     | **13b-gptq** |
-|---------------------|--------------------------------------------------------|-------------------------------------------------------------|-------------|--------------|
-| **Shurale-v1**      | [Link](https://huggingface.co/KompleteAI/Shurale7b-v1) | [Link](https://huggingface.co/KompleteAI/Shurale7b-v1-GPTQ) | Coming soon | Coming soon  |
-| **Shurale-v2**      | Coming soon                                            | Coming soon                                                 | Coming soon | Coming soon  |
+| **HuggingFace Hub** | **7b**                                                        | **7b-gptq**                                                 | **13b**     | **13b-gptq** |
+|---------------------|---------------------------------------------------------------|-------------------------------------------------------------|-------------|--------------|
+| **Shurale-v1**      | [Link](https://huggingface.co/KompleteAI/Shurale7b-v1) (this) | [Link](https://huggingface.co/KompleteAI/Shurale7b-v1-GPTQ) | Coming soon | Coming soon  |
+| **Shurale-v2**      | Coming soon                                                   | Coming soon                                                 | Coming soon | Coming soon  |
 
 <div align="justify">
 
@@ -232,7 +232,7 @@ print(client.generate(input_text, max_new_tokens=20).generated_text)
 text = ""
 for response in client.generate_stream(input_text, max_new_tokens=20):
   if not response.token.special:
-  text += response.token.text
+    text += response.token.text
 print(text)
   ```
 
@@ -443,9 +443,8 @@ the model will consistently receive the last 10 dialogue messages at each genera
 
 ```python
 def generate(prompt: str) -> str:
-
-
   ...
+
 
 max_context_length = 10
 
