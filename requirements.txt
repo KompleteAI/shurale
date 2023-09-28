@@ -1,1 +1,2 @@
 xllm
+git+https://github.com/huggingface/transformers

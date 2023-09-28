@@ -1,1 +1,2 @@
 xllm[train]
+git+https://github.com/huggingface/transformers

@@ -1,8 +1,12 @@
 # 🌿 Shurale7b-v1: Narrative based chit-chat model
 
 Developed by [@BobaZooba](https://huggingface.co/BobaZooba)
-**I'm open to work:
+
+**I'm open to
+work:
 ** [My CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing) | [My LinkedIn](https://www.linkedin.com/in/boriszubarev/) | [Advising](https://komplete.framer.ai)
+
+[GitHub Repo](https://github.com/KompleteAI/shurale)
 
 [<img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/JudU3rrPP5i87CfwINANO.png" alt="Powered by X—LLM" width="175" height="32"/>](https://github.com/KompleteAI/xllm)
 
