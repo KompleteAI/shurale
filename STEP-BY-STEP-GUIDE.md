@@ -99,7 +99,9 @@ Or
 Or directly
 
 ```bash
-python3 shurale/cli/download.py --dataset_key soda --model_name_or_path mistralai/Mistral-7B-v0.1 \
+python3 shurale/cli/download.py \
+  --dataset_key soda \
+  --model_name_or_path mistralai/Mistral-7B-v0.1 \
   --path_to_env_file ./.env
 ```
 
@@ -126,11 +128,23 @@ Or
 Or directly
 
 ```bash
-python3 shurale/cli/train.py --use_gradient_checkpointing True --deepspeed_stage 0 --stabilize True \
-  --model_name_or_path mistralai/Mistral-7B-v0.1 --use_flash_attention_2 False \
-  --load_in_4bit True --apply_lora True --raw_lora_target_modules all --per_device_train_batch_size 2 \
-  --warmup_steps 1000 --save_total_limit 0 --push_to_hub True --hub_model_id BobaZooba/Shurale7B-v1-LoRA \
-  --hub_private_repo True --report_to_wandb True --path_to_env_file ./.env
+python3 shurale/cli/train.py \
+  --use_gradient_checkpointing True \
+  --deepspeed_stage 0 \
+  --stabilize True \
+  --model_name_or_path mistralai/Mistral-7B-v0.1 \
+  --use_flash_attention_2 False \
+  --load_in_4bit True \
+  --apply_lora True \
+  --raw_lora_target_modules all \
+  --per_device_train_batch_size 2 \
+  --warmup_steps 1000 \
+  --save_total_limit 0 \
+  --push_to_hub True \
+  --hub_model_id BobaZooba/Shurale7B-v1-LoRA \
+  --hub_private_repo True \
+  --report_to_wandb True \
+  --path_to_env_file ./.env
 ```
 
 ### Multiple GPU
@@ -155,11 +169,23 @@ Or
 Or directly
 
 ```bash
-deepspeed --num_gpus=8 shurale/cli/train.py --use_gradient_checkpointing True --deepspeed_stage 2 --stabilize True \
-  --model_name_or_path mistralai/Mistral-7B-v0.1 --use_flash_attention_2 False \
-  --load_in_4bit True --apply_lora True --raw_lora_target_modules all --per_device_train_batch_size 6 \
-  --warmup_steps 1000 --save_total_limit 0 --push_to_hub True --hub_model_id BobaZooba/Shurale7B-v1-LoRA \
-  --hub_private_repo True --report_to_wandb True --path_to_env_file ./.env
+deepspeed --num_gpus=8 shurale/cli/train.py \
+  --use_gradient_checkpointing True \
+  --deepspeed_stage 2 \
+  --stabilize True \
+  --model_name_or_path mistralai/Mistral-7B-v0.1 \
+  --use_flash_attention_2 False \
+  --load_in_4bit True \
+  --apply_lora True \
+  --raw_lora_target_modules all \
+  --per_device_train_batch_size 8 \
+  --warmup_steps 1000 \
+  --save_total_limit 0 \
+  --push_to_hub True \
+  --hub_model_id BobaZooba/Shurale7B-v1-LoRA \
+  --hub_private_repo True \
+  --report_to_wandb True \
+  --path_to_env_file ./.env
 ```
 
 ## 5. Fuse LoRA
@@ -183,8 +209,13 @@ Or
 Or directly
 
 ```bash
-python3 shurale/cli/fuse.py --model_name_or_path mistralai/Mistral-7B-v0.1 --lora_hub_model_id BobaZooba/Shurale7B-v1-LoRA \
-  --hub_model_id BobaZooba/Shurale7B-v1 --hub_private_repo True --force_fp16 True --fused_model_local_path ./fused_model/ \
+python3 shurale/cli/fuse.py \
+  --model_name_or_path mistralai/Mistral-7B-v0.1 \
+  --lora_hub_model_id BobaZooba/Shurale7B-v1-LoRA \
+  --hub_model_id BobaZooba/Shurale7B-v1 \
+  --hub_private_repo True \
+  --force_fp16 True \
+  --fused_model_local_path ./fused_model/ \
   --path_to_env_file ./.env
 ```
 
@@ -205,27 +236,46 @@ Or
 Or directly
 
 ```bash
-python3 shurale/cli/gptq_quantize.py --model_name_or_path ./fused_model/ --apply_lora False --stabilize False \
-  --quantization_max_samples 100000 --quantized_model_path ./quantized_model/ --prepare_model_for_kbit_training False \
-  --quantized_hub_model_id BobaZooba/Shurale7B-v1-GPTQ --quantized_hub_private_repo True --path_to_env_file ./.env
+python3 shurale/cli/gptq_quantize.py \
+  --model_name_or_path ./fused_model/ \
+  --apply_lora False \
+  --stabilize False \
+  --quantization_max_samples 100000 \
+  --quantized_model_path ./quantized_model/ \
+  --prepare_model_for_kbit_training False \
+  --quantized_hub_model_id BobaZooba/Shurale7B-v1-GPTQ \
+  --quantized_hub_private_repo True \
+  --low_cpu_mem_usage \
+  --path_to_env_file ./.env
 ```
 
 ## 7. 🎉 Done! You are awesome!
 
-# 💼 If you want models as cool as this one
+Now your model was trained, fused (and maybe quantized) and saved to HuggingFace Hub.
 
-## X—LLM
+You can load the model using `transformers`
+
+```python
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+tokenizer = AutoTokenizer.from_pretrained("BobaZooba/Shurale7B-v1")
+model = AutoModelForCausalLM.from_pretrained("BobaZooba/Shurale7B-v1")
+```
+
+## 💼 If you want models as cool as this one
+
+### X—LLM
 
 The training of this model utilized the [X—LLM](https://github.com/KompleteAI/xllm) library. This tool makes it easy to
 finetune large language models using cutting-edge methods like bitsandbytes int4, QLoRA, DeepSpeed, Flash Attention 2,
 and so on. You can effortlessly integrate this library into your projects.
 
-## Advisor
+### Advisor
 
 And if your team is hunting for the insights of an adept advisor to propel your projects forward, don't hesitate to
 reach out through this website: https://komplete.framer.ai
 
-## New team member
+### New team member
 
 Are you seeking a dynamic addition to your team who possesses the prowess and the know-how to train such innovative
 models? Then consider

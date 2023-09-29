@@ -1,16 +1,17 @@
 # 🌿 Shurale7B-v1: Narrative based chit-chat model
 
-Developed by [@BobaZooba](https://huggingface.co/BobaZooba)
+Developed by [@BobaZooba](https://huggingface.co/BobaZooba) | E-mail: [bobazooba@gmail.com](mailto:bobazooba@gmail.com)
 
 I'm open to work &
-partnership: [My CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing) | [My LinkedIn](https://www.linkedin.com/in/boriszubarev/) | [Advising](https://komplete.framer.ai)
-
-[GitHub Repo](https://github.com/KompleteAI/shurale) | Model based
-on [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1)
+partnership: [Advising](https://komplete.framer.ai) | [My CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing) | [My LinkedIn](https://www.linkedin.com/in/boriszubarev/)
 
 [<img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/JudU3rrPP5i87CfwINANO.png" alt="Powered by X—LLM" width="175" height="32"/>](https://github.com/KompleteAI/xllm)
 
 # 🪄 About
+
+Model based  on [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1)
+
+[GitHub Repo](https://github.com/KompleteAI/shurale) | [Detailed step-by-step guide how to train this model](https://github.com/KompleteAI/shurale/blob/main/STEP-BY-STEP-GUIDE.md)
 
 | **HuggingFace Hub** | **7b**                                                 | **7b-gptq**                                                 |
 |---------------------|--------------------------------------------------------|-------------------------------------------------------------|
@@ -285,12 +286,13 @@ model [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1) at the
 | Field                | Value             |
 |----------------------|-------------------|
 | Model                | Mistral-7B-v0.1   |
-| Training steps       |                   |
+| Training steps       | 10000             |
 | Warm up steps        | 1000              |
+| Num epochs           | 2.76              |
 | Num training samples | 1,119,582 dialogs |
 | Num training tokens  | 300,036,117       |
-| Global batch size    |                   |
-| Max batch tokens     |                   |
+| Global batch size    | 256               |
+| Max batch tokens     | 524288            |
 | Loss                 |                   |
 | Perplexity           |                   |
 | GPU                  | 8 x RTX 4090      |
