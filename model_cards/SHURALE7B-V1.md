@@ -1,22 +1,20 @@
-# 🌿 Shurale7b-v1: Narrative based chit-chat model
+# 🌿 Shurale7B-v1: Narrative based chit-chat model
 
 Developed by [@BobaZooba](https://huggingface.co/BobaZooba)
 
 I'm open to work &
 partnership: [My CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing) | [My LinkedIn](https://www.linkedin.com/in/boriszubarev/) | [Advising](https://komplete.framer.ai)
 
-[GitHub Repo](https://github.com/KompleteAI/shurale)
-
-Model based on [Mistral-7B](https://huggingface.co/mistralai/Mistral-7B-v0.1)
+[GitHub Repo](https://github.com/KompleteAI/shurale) | Model based
+on [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1)
 
 [<img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/JudU3rrPP5i87CfwINANO.png" alt="Powered by X—LLM" width="175" height="32"/>](https://github.com/KompleteAI/xllm)
 
 # 🪄 About
 
-| **HuggingFace Hub** | **7b**                                                 | **7b-gptq**                                                 | **13b**     | **13b-gptq** |
-|---------------------|--------------------------------------------------------|-------------------------------------------------------------|-------------|--------------|
-| **Shurale-v1**      | [Link](https://huggingface.co/KompleteAI/Shurale7b-v1) | [Link](https://huggingface.co/KompleteAI/Shurale7b-v1-GPTQ) | Coming soon | Coming soon  |
-| **Shurale-v2**      | Coming soon                                            | Coming soon                                                 | Coming soon | Coming soon  |
+| **HuggingFace Hub** | **7b**                                                 | **7b-gptq**                                                 |
+|---------------------|--------------------------------------------------------|-------------------------------------------------------------|
+| **Shurale-v1**      | [Link](https://huggingface.co/KompleteAI/Shurale7B-v1) | [Link](https://huggingface.co/KompleteAI/Shurale7B-v1-GPTQ) |
 
 <div align="justify">
 
@@ -130,8 +128,8 @@ either by a newline symbol or by the name of the first character followed by a c
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-tokenizer = AutoTokenizer.from_pretrained("KompleteAI/ShuraleBase")
-model = AutoModelForCausalLM.from_pretrained("KompleteAI/ShuraleBase")
+tokenizer = AutoTokenizer.from_pretrained("KompleteAI/Shurale7B-v1")
+model = AutoModelForCausalLM.from_pretrained("KompleteAI/Shurale7B-v1")
 ```
 
 2. Run generation
@@ -148,7 +146,6 @@ generated_indices = model.generate(
   **tokenized,
   do_sample=True,
   max_new_tokens=128,
-  repetition_penalty=1.1,  # llama2 is prone to repetitions
   top_p=0.9
 )[0].cpu()
 
@@ -166,9 +163,9 @@ https://github.com/huggingface/text-generation-inference#get-started
 ### Docker
 
 ```bash
-model=KompleteAI/ShuraleBase
+model=KompleteAI/Shurale7B-v1
 volume=$PWD/data
-version=1.0.3  # please make sure you are using latest or stable version
+version=1.1.0  # please make sure you are using latest or stable version (>= 1.1.0)
 
 docker run --gpus all --shm-size 1g -p 8080:80 -v \
   $volume:/data ghcr.io/huggingface/text-generation-inference:$version \
@@ -177,20 +174,20 @@ docker run --gpus all --shm-size 1g -p 8080:80 -v \
 
 ### RunPod
 
-If you want to run a model at RunPod you can find ready to use template by name "ShuraleBase" at RunPod. Please note
+If you want to run a model at RunPod you can find ready to use template by name "Shurale7B-v1" at RunPod. Please note
 that **port 8081** is used to run this template.
 
 https://www.runpod.io/console/gpu-cloud
 
-| Field             | Value                                                                                                                      |
-|-------------------|----------------------------------------------------------------------------------------------------------------------------|
-| Container Image   | ghcr.io/huggingface/text-generation-inference:1.0.3                                                                        |
-| Docker Command    | --model-id KompleteAI/ShuraleBase --num-shard 1 --port 8081 --max-batch-prefill-tokens 2048 --dtype bfloat16 --json-output |
-| Container Disk    | 5                                                                                                                          |
-| Volume Disk       | 15                                                                                                                         |
-| Volume Mount Path | /data                                                                                                                      |
-| Expose HTTP Ports | 8081,8080                                                                                                                  |
-| Expose TCP Ports  | 8082                                                                                                                       |
+| Field             | Value                                                                                                                       |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| Container Image   | ghcr.io/huggingface/text-generation-inference:1.0.3                                                                         |
+| Docker Command    | --model-id KompleteAI/Shurale7B-v1 --num-shard 1 --port 8081 --max-batch-prefill-tokens 2048 --dtype bfloat16 --json-output |
+| Container Disk    | 5                                                                                                                           |
+| Volume Disk       | 15                                                                                                                          |
+| Volume Mount Path | /data                                                                                                                       |
+| Expose HTTP Ports | 8081,8080                                                                                                                   |
+| Expose TCP Ports  | 8082                                                                                                                        |
 
 </details>
 
@@ -201,7 +198,7 @@ https://www.runpod.io/console/gpu-cloud
 import requests
 import json
 
-url = "127.0.0.1:8080/generate"
+url = "127.0.0.1:8081/generate"
 headers = {"Content-Type": "application/json"}
 data = {
   "inputs": "Dialog between two colleagues: Emma and Anna.\nEmma:",
@@ -209,7 +206,6 @@ data = {
     "max_new_tokens": 128,
     "do_sample": True,
     "top_p": 0.9,
-    "repetition_penalty": 1.1,
     "stop": ["\n"]
   }
 }
@@ -231,8 +227,8 @@ from text_generation import Client
 
 input_text = "Dialog between two colleagues: Emma and Anna.\nEmma:"
 
-client = Client("http://127.0.0.1:8080")
-print(client.generate(input_text, max_new_tokens=20).generated_text)
+client = Client("http://127.0.0.1:8081")
+print(client.generate(input_text, max_new_tokens=128).generated_text)
 
 text = ""
 for response in client.generate_stream(input_text, max_new_tokens=20):
@@ -253,17 +249,17 @@ The training of this model utilized the [X—LLM](https://github.com/KompleteAI/
 finetune large language models using cutting-edge methods like bitsandbytes int4, QLoRA, DeepSpeed, Flash Attention 2,
 and so on. You can effortlessly integrate this library into your projects.
 
+## Advisor
+
+And if your team is hunting for the insights of an adept advisor to propel your projects forward, don't hesitate to
+reach out through this website: https://komplete.framer.ai
+
 ## New team member
 
 Are you seeking a dynamic addition to your team who possesses the prowess and the know-how to train such innovative
 models? Then consider
 sharing [my CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing)
 or [LinkedIn](https://www.linkedin.com/in/boriszubarev/) with your manager.
-
-## Advisor
-
-And if your team is hunting for the insights of an adept advisor to propel your projects forward, don't hesitate to
-reach out through this website: https://komplete.framer.ai
 
 ---
 
@@ -277,24 +273,27 @@ The model was trained using only the training part of the [SODA](https://hugging
 
 ## Results
 
-This model, based on llama2-7b, was trained on over 1.1 million dialogues using 4 RTX 4090 (24 Gb) GPUs. The training
-process lasted 45 hours and made use of advanced techniques such as QLoRA (int4), DeepSpeed Stage 2, Flash Attention 2,
-and gradient checkpointing.
+This model, based on [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1), was trained on over 1.1
+million
+dialogues using 8 RTX 4090 (24 Gb) GPUs. The training
+process lasted 45 hours and made use of advanced techniques such as QLoRA (int4), DeepSpeed Stage 2,
+and gradient checkpointing. Flash Attention 2 was disabled due to this technique was not implemented for the
+model [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1) at the moment of training.
 
 ### Overall
 
 | Field                | Value             |
 |----------------------|-------------------|
-| Model                | llama2-7b         |
-| Training steps       | 18500             |
-| Warm up steps        | 500               |
+| Model                | Mistral-7B-v0.1   |
+| Training steps       |                   |
+| Warm up steps        | 1000              |
 | Num training samples | 1,119,582 dialogs |
 | Num training tokens  | 300,036,117       |
-| Global batch size    | 64                |
-| Max batch tokens     | 131,072           |
-| Loss                 | 1.96              |
-| Perplexity           | 7.1               |
-| GPU                  | 4 x RTX 4090      |
+| Global batch size    |                   |
+| Max batch tokens     |                   |
+| Loss                 |                   |
+| Perplexity           |                   |
+| GPU                  | 8 x RTX 4090      |
 | Cost                 | $100              |
 | Training time        | 45 hours          |
 | Provider             | vast.ai           |
@@ -416,16 +415,13 @@ and gradient checkpointing.
 
 ## Loss dynamic
 
-![image/png](https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/QJiPgfDmdQvo1ucWkedOr.png)
+<!-- ![image/png](https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/QJiPgfDmdQvo1ucWkedOr.png) -->
 
 ---
 
 # 📁 License Details
 
-Please note that Llama 2 has its own
-license ([link](https://ai.meta.com/resources/models-and-libraries/llama-downloads/)), and the SODA dataset has its own
-license as well ([link](https://creativecommons.org/licenses/by/4.0/)). The responsibility for using this model remains
-with you.
+The responsibility for using this model remains with you.
 
 ---
 
@@ -589,7 +585,7 @@ really interesting to me.
 </details>
 
 <details>
-  <summary>Example #5</summary>
+<summary>Example #5</summary>
 
 **Narrative:**
 Simran is a strong and independent woman. She quit her job at Myriah's nightclub because she didn't want to be
