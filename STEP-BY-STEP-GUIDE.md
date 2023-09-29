@@ -23,6 +23,11 @@ project.
 | `fuse.sh`            | Fuse LoRA and upload fused model to Huggingface Hub                                                                                     |
 | `gptq-quantize.sh`   | GPTQ quantization of the fused model. Optional step.                                                                                    |
 
+Please check these useful materials:
+- [Detailed guide](https://github.com/KompleteAI/xllm/blob/main/DETAILED_GUIDE.md): here, we go into detail about everything the library can do
+- [Demo project](https://github.com/KompleteAI/xllm-demo): here's a step-by-step example of how to use X—LLM and fit it into your own project
+- [Template project](https://github.com/KompleteAI/xllm-template): here's a template, a kickoff point you can use for your projects
+
 # Steps to reproduce
 
 ## 0. Run the correct environment
@@ -60,9 +65,17 @@ TOKENIZERS_PARALLELISM=false
 Make a `.env` file with filled variables. `HUGGING_FACE_HUB_TOKEN` is necessary, everything about wandb is only needed
 for training. These variables will be loaded into the environment when any of the scripts are called.
 
-## 3. Корректные переменные
+## 3. Set up correct config
 
-## 3. Give access permissions to the `scripts/*`
+You need to set the correct config variables in all the scripts used (download, train, etc.). For example, the correct name of your project in HuggigFace Hub and so on.
+
+### Useful materials
+
+- [Important config fields for different steps](!link)
+- [How do I choose the methods for training?](!link)
+- [Detailed description of all config fields](!link)
+
+## 4. Give access permissions to the `scripts/*`
 
 To run bash scripts you need to give them permissions.
 
@@ -76,7 +89,7 @@ Or
 make scripts-access
 ```
 
-## 3. Prepare dataset and model
+## 5. Prepare dataset and model
 
 Before you begin the training process, it's essential that you first download the necessary data and the model. The
 training won't proceed without this as it's during this stage that your training data gets prepared. We've separated
@@ -105,7 +118,7 @@ python3 shurale/cli/download.py \
   --path_to_env_file ./.env
 ```
 
-## 4. Train model
+## 6. Train model
 
 For more information about configuring your setup, refer to the [X—LLM](https://github.com/KompleteAI/xllm)
 documentation. Make sure to fill in the correct values, such as your specific `hub_model_id` and other relevant
@@ -188,7 +201,7 @@ deepspeed --num_gpus=8 shurale/cli/train.py \
   --path_to_env_file ./.env
 ```
 
-## 5. Fuse LoRA
+## 7. Fuse LoRA
 
 Если вы обучали модель с использованием LoRA, то вам следует
 
@@ -219,7 +232,7 @@ python3 shurale/cli/fuse.py \
   --path_to_env_file ./.env
 ```
 
-## 6. [Optional] GPTQ quantization
+## 8. [Optional] GPTQ quantization
 
 Run this command line:
 
@@ -249,7 +262,7 @@ python3 shurale/cli/gptq_quantize.py \
   --path_to_env_file ./.env
 ```
 
-## 7. 🎉 Done! You are awesome!
+## 9. 🎉 Done! You are awesome!
 
 Now your model was trained, fused (and maybe quantized) and saved to HuggingFace Hub.
 
