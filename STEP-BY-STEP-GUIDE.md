@@ -1,9 +1,12 @@
 # How to train 🌿 Shurale7B-v1: Narrative based chit-chat model
 
-Developed by [@BobaZooba](https://huggingface.co/BobaZooba)
+Developed by [@BobaZooba](https://www.linkedin.com/in/boriszubarev/) |
+E-mail: [bobazooba@gmail.com](mailto:bobazooba@gmail.com)
 
-I'm open to work &
-partnership: [My CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing) | [My LinkedIn](https://www.linkedin.com/in/boriszubarev/) | [Advising](https://komplete.framer.ai)
+Open for
+partnership: [Advising](https://komplete.framer.ai) | [CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing) | [LinkedIn](https://www.linkedin.com/in/boriszubarev/)
+
+[<img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/JudU3rrPP5i87CfwINANO.png" alt="Powered by X—LLM" width="175" height="32"/>](https://github.com/KompleteAI/xllm)
 
 [GitHub Repo](https://github.com/KompleteAI/shurale) | Model based
 on [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1)
@@ -24,9 +27,14 @@ project.
 | `gptq-quantize.sh`   | GPTQ quantization of the fused model. Optional step.                                                                                    |
 
 Please check these useful materials:
-- [Detailed guide](https://github.com/KompleteAI/xllm/blob/main/DETAILED_GUIDE.md): here, we go into detail about everything the library can do
-- [Demo project](https://github.com/KompleteAI/xllm-demo): here's a step-by-step example of how to use X—LLM and fit it into your own project
-- [Template project](https://github.com/KompleteAI/xllm-template): here's a template, a kickoff point you can use for your projects
+
+- [Detailed guide](https://github.com/KompleteAI/xllm/blob/main/DETAILED_GUIDE.md): here, we go into detail about
+  everything the library can do
+- [Demo project](https://github.com/KompleteAI/xllm-demo): here's a step-by-step example of how to use X—LLM and fit it
+  into your own project
+  - [Minimal demo project](https://github.com/KompleteAI/xllm-demo-minimal): simplest project using X—LLM
+- [Template project](https://github.com/KompleteAI/xllm-template): here's a template, a kickoff point you can use for
+  your projects
 
 # Steps to reproduce
 
@@ -67,7 +75,8 @@ for training. These variables will be loaded into the environment when any of th
 
 ## 3. Set up correct config
 
-You need to set the correct config variables in all the scripts used (download, train, etc.). For example, the correct name of your project in HuggigFace Hub and so on.
+You need to set the correct config variables in all the scripts used (download, train, etc.). For example, the correct
+name of your project in HuggigFace Hub and so on.
 
 ### Useful materials
 
