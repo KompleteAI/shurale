@@ -6,6 +6,7 @@ Open for
 partnership: [Advising](https://komplete.framer.ai) | [CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing) | [LinkedIn](https://www.linkedin.com/in/boriszubarev/)
 
 [<img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/JudU3rrPP5i87CfwINANO.png" alt="Powered by X—LLM" width="175" height="32"/>](https://github.com/KompleteAI/xllm)
+[<img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/4y7RfOdhxvh1Tim99uLkW.png" alt="Chat with Shurale" width="120" height="40"/>](https://t.me/ShuraleAIBot)
 
 # 🪄 About
 
@@ -13,11 +14,9 @@ Model based on [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.
 
 [GitHub Repo](https://github.com/KompleteAI/shurale) | [Detailed step-by-step guide how to train this model](https://github.com/KompleteAI/shurale/blob/main/STEP-BY-STEP-GUIDE.md)
 
-[<img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/4y7RfOdhxvh1Tim99uLkW.png" alt="Chat with Shurale" width="120" height="40"/>](https://t.me/ShuraleAIBot)
-
-| **HuggingFace Hub** | **7B**                                                        | **7B-GPTQ**                                                 |
-|---------------------|---------------------------------------------------------------|-------------------------------------------------------------|
-| **Shurale-v1**      | [Link](https://huggingface.co/KompleteAI/Shurale7B-v1) (this) | [Link](https://huggingface.co/KompleteAI/Shurale7B-v1-GPTQ) |
+| **HuggingFace Hub** | **7B**                                                 | **7B-GPTQ**                                                 |
+|---------------------|--------------------------------------------------------|-------------------------------------------------------------|
+| **Shurale-v1**      | [Link](https://huggingface.co/KompleteAI/Shurale7B-v1) | [Link](https://huggingface.co/KompleteAI/Shurale7B-v1-GPTQ) |
 
 ## What is Shurale?
 
