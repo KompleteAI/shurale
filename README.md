@@ -21,9 +21,11 @@ Model based on [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.
 
 ## What is Shurale?
 
-<div align="justify">
+<div align="center">
 
 <img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/EmwEd5khHmzUTatA_tXB0.png" alt="Shurale" width="200" height="200" style="float: right; float: bottom; margin-left: 50px;" />
+
+</div>
 
 - Shurale is an open-domain dialogue model for chit-chat conversations
 - The model has the capability to establish a character and situation in the conversation
@@ -36,8 +38,6 @@ Model based on [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.
 > Shurale [/ʃʊrɑˈlʲe/] is a forest spirit in Bashkir and Tatar mythology.
 
 [Do you want models as cool as this one?](https://huggingface.co/KompleteAI/Shurale7B-v1#🚀-call-to-action)
-
-</div>
 
 ---
 
