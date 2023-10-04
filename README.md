@@ -108,13 +108,13 @@ either by a newline symbol or by the name of the first character followed by a c
 ### Shurale completion
 
 I'm sorry, Garry. We're just having a little trouble getting everything done the way you want it.
-**Garry:** Well, you need to fix it, and fast! I'm not going to tolerate any more slacking off! Do you understand me?
-**Bob:** Yes, Garry. I understand.
-**Garry:** Good. Now get to work and fix this mess!
-**Bob:** Yes, Garry. I'll get right on it.
+**Garry:** Well, you need to fix it, and fast! I'm not going to tolerate any more slacking off! Do you understand me?  
+**Bob:** Yes, Garry. I understand.  
+**Garry:** Good. Now get to work and fix this mess!  
+**Bob:** Yes, Garry. I'll get right on it.  
 **Garry:** And don't give me any lip about it either! I'm not putting up with that kind of attitude around here any
-more! Do you hear me?
-**Bob:** Yes, Garry. I hear you loud and clear. I'll get to work right away and make sure everything is done your way.
+more! Do you hear me?  
+**Bob:** Yes, Garry. I hear you loud and clear. I'll get to work right away and make sure everything is done your way.  
 **Garry:** Good. I'll be checking on you regularly to make sure that this is all getting done the way I want it! So
 don't you dare let me down!
 ---
