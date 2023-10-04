@@ -2,6 +2,7 @@
 
 Developed by [@BobaZooba](https://www.linkedin.com/in/boriszubarev/) |
 E-mail: [bobazooba@gmail.com](mailto:bobazooba@gmail.com)
+
 Open for
 partnership: [Advising](https://komplete.framer.ai) | [CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing) | [LinkedIn](https://www.linkedin.com/in/boriszubarev/)
 
