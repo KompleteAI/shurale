@@ -1,66 +1,73 @@
+---
+license: apache-2.0
+datasets:
+  - allenai/soda
+language:
+  - en
+pipeline_tag: text-generation
+---
+
 # 🌿 Shurale7B-v1: Narrative based chit-chat model
 
-Developed by [@BobaZooba](https://huggingface.co/BobaZooba)
-
-I'm open to work &
-partnership: [My CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing) | [My LinkedIn](https://www.linkedin.com/in/boriszubarev/) | [Advising](https://komplete.framer.ai)
-
-[GitHub Repo](https://github.com/KompleteAI/shurale) | Model based
-on [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1)
+Developed by [@BobaZooba](https://www.linkedin.com/in/boriszubarev/) |
+E-mail: [bobazooba@gmail.com](mailto:bobazooba@gmail.com)  
+Open for
+partnership: [Advising](https://komplete.framer.ai) | [CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing) | [LinkedIn](https://www.linkedin.com/in/boriszubarev/)
 
 [<img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/JudU3rrPP5i87CfwINANO.png" alt="Powered by X—LLM" width="175" height="32"/>](https://github.com/KompleteAI/xllm)
 
 # 🪄 About
 
-| **HuggingFace Hub** | **7b**                                                 | **7b-gptq**                                                 |
-|---------------------|--------------------------------------------------------|-------------------------------------------------------------|
-| **Shurale-v1**      | [Link](https://huggingface.co/KompleteAI/Shurale7B-v1) | [Link](https://huggingface.co/KompleteAI/Shurale7B-v1-GPTQ) |
+Model based on [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1)
+
+[GitHub Repo](https://github.com/KompleteAI/shurale) | [Detailed step-by-step guide how to train this model](https://github.com/KompleteAI/shurale/blob/main/STEP-BY-STEP-GUIDE.md)
+
+[<img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/4y7RfOdhxvh1Tim99uLkW.png" alt="Chat with Shurale" width="120" height="40"/>](https://t.me/ShuraleAIBot)
+
+| **HuggingFace Hub** | **7B**                                                        | **7B-GPTQ**                                                 |
+|---------------------|---------------------------------------------------------------|-------------------------------------------------------------|
+| **Shurale-v1**      | [Link](https://huggingface.co/KompleteAI/Shurale7B-v1) (this) | [Link](https://huggingface.co/KompleteAI/Shurale7B-v1-GPTQ) |
+
+## What is Shurale?
 
 <div align="justify">
 
 <img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/EmwEd5khHmzUTatA_tXB0.png" alt="Shurale" width="200" height="200" style="float: right; float: bottom; margin-left: 50px;" />
 
-**Shurale** is a dialogue model perfect for engaging in realistic and wide-reaching discussions.
-The model's strength comes from its 7-billion parameter foundation (based on **Llama 2**), which was meticulously *
-*trained on over a million dialogues**, with clear roles defined for dialogue participants.
-Unique in its approach, it uses **narrative context**, aiding in the creation and maintenance of coherent characters
-throughout a conversation.
-This results in communications that are seamless, lively, and strikingly natural. A pleasant detail: the entire training
-process only **cost $100**.
+- Shurale is an open-domain dialogue model for chit-chat conversations
+- The model has the capability to establish a character and situation in the conversation
+- It's a 7B model based on [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1)
+- The model was trained using 1,112,000 dialogs for 10,000 steps with a batch size of 128
+- Trained on 334 million tokens
+- Maximum length at training was 2048 tokens
+- The total cost of training this model is just $58
 
 > Shurale [/ʃʊrɑˈlʲe/] is a forest spirit in Bashkir and Tatar mythology.
 
+[Do you want models as cool as this one?](https://huggingface.co/KompleteAI/Shurale7B-v1#🚀-call-to-action)
+
 </div>
-
-[Do you want models as cool as this one?](https://huggingface.co/BobaZooba/Shurale#💼-if-you-want-models-as-cool-as-this-one)
-
----
-
-# 🤔 Why not ChatGPT?
-
-ChatGPT, even GPT4, struggles with producing human-like dialogues.
-A lot of modifications and tricks are necessary just to receive a basic human-like response to a simple query such as "
-how are you?".
-Responses from GPT models and other instructional models often lack authenticity and feel awkward.
-These instructional models thrive in a wholly different sphere related to rational processes and information retrieval,
-offering limited control and training opportunities.
-
-**Bottom line** - trying to chat with GPT like it's a human will likely lead to a slew of problems.
-**Shurale**, however, tackles this issue effectively.
-It steers clear of these hurdles by permitting more human-like dialogues and providing provisions to create a distinct
-character.
 
 ---
 
 # 📝 Prompt
 
-The parts of the dialogue (narrative and replies) are separated using a newline symbol: **\n**
+The parts of the dialogue (narrative and phrases) are separated using a newline symbol: **\n**
 
-The **maximum length** during training is **2048 tokens**.
-
-The [SODA](https://huggingface.co/datasets/allenai/soda) dataset was used for the training process.
+The **maximum length** during training was **2048 tokens**. The [SODA](https://huggingface.co/datasets/allenai/soda)
+dataset was used for the training process.
 
 ## Format
+
+The model in the prompt needs two things from you: **narrative** (description of the dialog) + **dialog** (dialog).
+
+The narrative outlines the context for the conversation. This can include details about the situation, characters, and
+what's happening. This usually takes the form of 2-3 sentences.
+
+The dialog is a series of phrases or lines from individuals involved. You just need to indicate who is saying what.
+
+<details>
+<summary>Details</summary>
 
 Training examples consisted of both the narrative and the dialogue itself, with the participants' names clearly
 indicated.
@@ -95,35 +102,39 @@ Phrases used by the participants in the dialogue
 Narratives were deliberately omitted from 5% of the training examples, allowing the model to maintain a dialogue even
 without a narrative. However, using the model without a narrative is generally not recommended.
 
+</details>
+
 ## Example
 
-### Training sample
-
 The baton was passed to Garry who then became the boss. He ran the show with an iron fist, making sure that everything
-was done his way. No one dared to cross him for fear of being on the receiving end of his wrath
-Garry: What the hell is going on around here? I thought I told you to get this place in order!
-Bob: I'm sorry, boss. We've been having some trouble with the employees lately. They just don't seem to be following
-orders like they used to.
-Garry: Well, you need to get them in line or I'll find someone who will! This place is a mess and it's all your fault!
-Bob: Yes, boss. I'll take care of it right away.
-
-### Real world example
-
-The baton was passed to Garry who then became the boss. He ran the show with an iron fist, making sure that everything
-was done his way. No one dared to cross him for fear of being on the receiving end of his wrath
-Garry: What the hell is going on around here? I thought I told you to get this place in order!
-Bob:
+was done his way. No one dared to cross him for fear of being on the receiving end of his wrath  
+**Garry:** What the hell is going on around here? I thought I told you to get this place in order!  
+**Bob:**
 
 In this example, we explicitly tell the model that it's now Bob's turn to speak. The end of the reply can be designated
 either by a newline symbol or by the name of the first character followed by a colon (**Garry:**).
 
+### Shurale completion
+
+I'm sorry, Garry. We're just having a little trouble getting everything done the way you want it.  
+**Garry:** Well, you need to fix it, and fast! I'm not going to tolerate any more slacking off! Do you understand me?  
+**Bob:** Yes, Garry. I understand.  
+**Garry:** Good. Now get to work and fix this mess!  
+**Bob:** Yes, Garry. I'll get right on it.  
+**Garry:** And don't give me any lip about it either! I'm not putting up with that kind of attitude around here any
+more! Do you hear me?  
+**Bob:** Yes, Garry. I hear you loud and clear. I'll get to work right away and make sure everything is done your way.  
+**Garry:** Good. I'll be checking on you regularly to make sure that this is all getting done the way I want it! So
+don't you dare let me down!
 ---
 
 # 🔧 How to use
 
+Recommended **top_p** for sampling: 0.9
+
 ## Transformers
 
-1. Load the model
+1. Load model
 
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -181,7 +192,7 @@ https://www.runpod.io/console/gpu-cloud
 
 | Field             | Value                                                                                                                       |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| Container Image   | ghcr.io/huggingface/text-generation-inference:1.0.3                                                                         |
+| Container Image   | ghcr.io/huggingface/text-generation-inference:1.1.0                                                                         |
 | Docker Command    | --model-id KompleteAI/Shurale7B-v1 --num-shard 1 --port 8081 --max-batch-prefill-tokens 2048 --dtype bfloat16 --json-output |
 | Container Disk    | 5                                                                                                                           |
 | Volume Disk       | 15                                                                                                                          |
@@ -241,28 +252,6 @@ print(text)
 
 ---
 
-# 💼 If you want models as cool as this one
-
-## X—LLM
-
-The training of this model utilized the [X—LLM](https://github.com/KompleteAI/xllm) library. This tool makes it easy to
-finetune large language models using cutting-edge methods like bitsandbytes int4, QLoRA, DeepSpeed, Flash Attention 2,
-and so on. You can effortlessly integrate this library into your projects.
-
-## Advisor
-
-And if your team is hunting for the insights of an adept advisor to propel your projects forward, don't hesitate to
-reach out through this website: https://komplete.framer.ai
-
-## New team member
-
-Are you seeking a dynamic addition to your team who possesses the prowess and the know-how to train such innovative
-models? Then consider
-sharing [my CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing)
-or [LinkedIn](https://www.linkedin.com/in/boriszubarev/) with your manager.
-
----
-
 # 🚄 Training Process
 
 [<img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/JudU3rrPP5i87CfwINANO.png" alt="Powered by X—LLM" width="175" height="32"/>](https://github.com/KompleteAI/xllm)
@@ -275,44 +264,50 @@ The model was trained using only the training part of the [SODA](https://hugging
 
 This model, based on [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1), was trained on over 1.1
 million
-dialogues using 8 RTX 4090 (24 Gb) GPUs. The training
+dialogues using 8 RTX 3090 (24 Gb) GPUs. The training
 process lasted 45 hours and made use of advanced techniques such as QLoRA (int4), DeepSpeed Stage 2,
 and gradient checkpointing. Flash Attention 2 was disabled due to this technique was not implemented for the
 model [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1) at the moment of training.
 
 ### Overall
 
-| Field                | Value             |
-|----------------------|-------------------|
-| Model                | Mistral-7B-v0.1   |
-| Training steps       |                   |
-| Warm up steps        | 1000              |
-| Num training samples | 1,119,582 dialogs |
-| Num training tokens  | 300,036,117       |
-| Global batch size    |                   |
-| Max batch tokens     |                   |
-| Loss                 |                   |
-| Perplexity           |                   |
-| GPU                  | 8 x RTX 4090      |
-| Cost                 | $100              |
-| Training time        | 45 hours          |
-| Provider             | vast.ai           |
+| Field                         | Value                |
+|-------------------------------|----------------------|
+| Model                         | Mistral-7B-v0.1      |
+| Training steps                | 10,000               |
+| Warm up steps                 | 1,000                |
+| Num epochs                    | 1.14                 |
+| Num training samples          | 1,119,582 dialogs    |
+| Max sequence length           | 2048 tokens          |
+| Num training tokens per epoch | 292,851,543          |
+| Num training tokens total     | 334,812,435          |
+| Batch size                    | 4                    |
+| Gradient accumulation steps   | 4                    |
+| GPUs                          | 8 x RTX 3090 (24 Gb) |
+| Global batch size             | 128                  |
+| Max batch tokens              | 262,144              |
+| Loss                          | 1.93                 |
+| Perplexity                    | 6.9                  |
+| Cost                          | $58                  |
+| Price per hour                | $2.13                |
+| Training time                 | 27 hours             |
+| Provider                      | vast.ai              |
 
 ### Important training details
 
-| Field                      | Value         |
-|----------------------------|---------------|
-| Use gradient checkpointing | True          |
-| Use bnb int4               | True          |
-| Apply LoRA                 | True          |
-| LoRA rank                  | 64            |
-| LoRA alpha                 | 32            |
-| LoRA layers                | all           |
-| Scheduler                  | WarmupDecayLR |
-| Max lr                     | 2e-4          |
-| Use Flash Attention 2      | True          |
-| DeepSpeed Stage            | 2             |
-| DeepSpeed Offloading       | True          |
+| Field                      | Value                                      |
+|----------------------------|--------------------------------------------|
+| Use gradient checkpointing | True                                       |
+| Use bnb int4               | True                                       |
+| Apply LoRA                 | True                                       |
+| LoRA rank                  | 64                                         |
+| LoRA alpha                 | 32                                         |
+| LoRA layers                | all                                        |
+| Scheduler                  | WarmupDecayLR                              |
+| Max lr                     | 2e-4                                       |
+| Use Flash Attention 2      | False (not supported yet for mistal models |
+| DeepSpeed Stage            | 2                                          |
+| DeepSpeed Offloading       | True                                       |
 
 <details>
 <summary>Detailed config</summary>
@@ -346,7 +341,7 @@ model [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1) at the
 |------------------------|-------|
 | tokenizer_name_or_path | None  |
 | tokenizer_use_fast     | None  |
-| tokenizer_padding_side | right |
+| tokenizer_padding_side | None  |
 
 ### Collator
 
@@ -357,13 +352,13 @@ model [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1) at the
 
 ### Model
 
-| Field                 | Value                    |
-|-----------------------|--------------------------|
-| model_name_or_path    | meta-llama/Llama-2-7b-hf |
-| model_type            | llama                    |
-| use_flash_attention_2 | True                     |
-| trust_remote_code     | True                     |
-| device_map            | None                     |
+| Field                 | Value                     |
+|-----------------------|---------------------------|
+| model_name_or_path    | mistralai/Mistral-7B-v0.1 |
+| model_type            | llama                     |
+| use_flash_attention_2 | True                      |
+| trust_remote_code     | True                      |
+| device_map            | None                      |
 
 ### bitsandbytes
 
@@ -383,7 +378,7 @@ model [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1) at the
 | output_dir                  | ./outputs/ |
 | per_device_train_batch_size | 4          |
 | gradient_accumulation_steps | 4          |
-| warmup_steps                | 500        |
+| warmup_steps                | 1000       |
 | max_steps                   | None       |
 | num_train_epochs            | 1          |
 | learning_rate               | 2e-4       |
@@ -415,20 +410,15 @@ model [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1) at the
 
 ## Loss dynamic
 
-<!-- ![image/png](https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/QJiPgfDmdQvo1ucWkedOr.png) -->
-
----
-
-# 📁 License Details
-
-The responsibility for using this model remains with you.
+![train_loss](https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/9Wc9ekXcX8n_xl_j_VC4x.png)
 
 ---
 
 # 🔐 Limitations
 
 The model was trained on a synthetic dataset generated using ChatGPT, leading to a few critical issues with the current
-version. Often, the model tends to be rather bland and can occasionally be unnatural. Although the model wasn't
+version. Often, the model tends to be rather bland and can occasionally be unnatural.
+Conversations can be very short, the model tends to say goodbye. Although the model wasn't
 explicitly trained to be safe, it's likely these traits are inherited from ChatGPT. Moreover, handling very long
 dialogues is considered out-of-domain for the model since it was trained with a maximum length of 2048 tokens. The
 model's ability to generate truth-valid facts wasn't tested, but it's probable that its performance in this area lags
@@ -477,137 +467,114 @@ while True:
 <details>
 <summary>Example #1</summary>
 
-**Narrative:**
-Meilani is a loyal friend who can always be counted on. Meilani is someone you can confide in and trust to keep your
-secrets safe. Meilani is always there for a friend in need.
+**Narrative:**  
+Mckenzi felt as though he had made a mistake as soon as he handed in his notice. His boss had been angry, and his
+co-workers disappointed. Mckenzi himself felt regretful and unsure of what the future held.
 
-**Context:**
-Meilani: So, what's up?
-Sarah: Not much. Just feeling a little down lately.
-Meilani: That's tough. I'm here for you, though. You can talk to me about anything.
-Sarah:
+**Dialog:**  
+Mckenzi: I'm sorry if this comes as a surprise, but I've decided to quit.  
+Boss: What? Why? Is there something wrong?  
+Mckenzi: No, nothing's wrong. I just feel like it's time for a change.  
+Boss:
 
-**Original response:**
-Thanks, Addy. I appreciate that.
+**Original response:**  
+I see. Well, I'm sorry to hear that you're leaving. We'll miss you around here.
 
 **Shurale responses:**
 
-- 1
-- 1
-- 1
-- 1
-- 1
+- I see. Well, we're going to miss you around here. You're a good worker and we're not used to seeing talented people
+  leave us.
+- I see. Well, we're going to miss you around here. You're a great employee and we'll be sad to see you go. Do you have
+  any plans for what you'll do next?
+- Well, I'm sorry to hear that. We're going to miss you around here. But if you're sure this is what you want to do,
+  then we won't stand in your way.
+- I don't understand. You've only been with us for a couple of months. Are you sure this is what you want to do?
+- A change? Mckenzi, you've been with this company for years. You're one of our most valued employees. What could
+  possibly make you want to leave?
 
 </details>
 
 <details>
 <summary>Example #2</summary>
 
-**Narrative:**
-Kadee is respected by other people because she is a leader. She is confident and knows what she wants. People admire her
-for her strength and determination
+**Narrative:**  
+Kanon felt her face flush with anger. She balled up her fists, digging her nails into her palms as she glared at
+Suzette. It was all she could do to keep herself from launching across the table and strangling him.
 
-**Context:**
-Kadee: Hi, how are you?
-Person: I'm good, thanks. How about you?
-Kadee: I'm doing well. Thanks for asking.
-Person: So, what's been going on?
-Kadee: Just the usual, work and stuff. You know how it is.
-Person:
+**Dialog:**  
+Kanon: What the hell do you mean by that? Do you think I'm some kind of idiot?  
+Suzette: No, of course not. I just think that you might not be aware of what you're getting yourself into. This whole
+thing could be a lot more complicated than you realize.  
+Kanon:
 
-**Original response:**
-Yeah, I can imagine. So, what's new with you?
+**Original response:**  
+I'm perfectly aware of what I'm doing, thank you. And I can handle myself just fine. So don't try to tell me what to do.
 
 **Shurale responses:**
 
-- 1
-- 1
-- 1
-- 1
-- 1
+- Oh, please. Like you're some big expert on the situation or something? You don't know anything about me or my family
+  or what we're going through. So why don't you just back off and let me handle this my way!
+- I'm not an idiot, and I'm fully aware of what I'm getting myself into. I know exactly what I'm doing, and I'm not
+  going to let you stop me.
+- C'mon, Suzette. You know me better than that. I can handle my own business. Besides, it's not like I'm going to get
+  involved with him on any level other than professional.
+- I know exactly what I'm doing. I'm not some stupid little girl who gets caught up in things without knowing what she's
+  doing.
+- I can handle whatever comes my way. I'm not going to let some stupid rumors stop me from finding out the truth.
 
 </details>
 
 <details>
 <summary>Example #3</summary>
 
-**Narrative:**
-Gabrielle was interested in hiking. She had always wanted to try it and had been told by many people that it was a great
-way to get some exercise while also enjoying the outdoors. Finally, she took the plunge and went on a hike with a
-friend.
+**Narrative:**  
+Kelcey is irresponsible. She often fails to finish articles she starts writing, and this has led to her being fired from
+several jobs.
 
-**Context:**
-Gabrielle:
+**Context:**  
+Kelcey:
 
 **Original response:**
-Hey, thanks for coming with me on this hike! I've been wanting to try it for a while.
+Hey, boss. I'm sorry I didn't finish that article you asked me to write.
 
 **Shurale responses:**
 
-- 1
-- 1
-- 1
-- 1
-- 1
+- I'm sorry, boss. I know I've been irresponsible and I know I often fail to finish articles I start writing. But I
+  really think I can turn things around.
+- I'm sorry, boss. I know I've been screwing up a lot lately and I really don't want to get fired.
+- I'm sorry I didn't finish that article, boss. It won't happen again.
+- Hey, what's up?
+- Hey, boss. I'm sorry I didn't finish that article you wanted me to write.
 
 </details>
 
-<details>
-<summary>Example #4</summary>
-
-**Narrative:**
-Elizah is obsessed with video games. She spends most of her free time playing them and she loves learning about
-different game developers, their processes, and the gaming industry as a whole. Her favorite games are puzzle games, but
-she enjoys playing all kinds of games.
-
-**Context:**
-Elizah: Hi, Alex! I'm so happy to see you. What have you been up to lately?
-Alex: I've been good, thanks for asking. I've just been really busy with work and haven't had much time for anything
-else. But I'm glad to have some free time now so we can catch up. So, what's new with you?
-Elizah: Oh, not much. I've just been playing a lot of video games lately. I'm really into puzzle games right now, but I
-enjoy playing all kinds of games.
-Alex: That sounds like a lot of fun. I used to play video games all the time when I was younger, but I don't have as
-much time for them now. But it's good to hear that you're enjoying them.
-Elizah:
-
-**Original response:**
-Yeah, I am. I love learning about different game developers and their processes. And the gaming industry as a whole is
-really interesting to me.
-
-**Shurale responses:**
-
-- 1
-- 1
-- 1
-- 1
-- 1
-
-</details>
+## Out-of-distribution
 
 <details>
-<summary>Example #5</summary>
+<summary>Example #1</summary>
 
-**Narrative:**
-Simran is a strong and independent woman. She quit her job at Myriah's nightclub because she didn't want to be
-associated with that type of business anymore. She wants to focus on her own goals and bettering herself.
+**Narrative:**  
+John and Bob have always been rivals. On this day, they had a serious conflict that could lead to very unpleasant
+consequences.
 
-**Context:**
-Simran: I'm done working at your club, Myriah.
-Myriah: What? Why? You're one of my best workers.
-Simran: I don't want to be associated with that type of business anymore. It's not what I'm about.
-Myriah:
-
-**Original response:**
-Fine. If that's how you feel, then I won't force you to stay. But I hope you'll reconsider. We could really use someone
-like you at the club.
-
-**Shurale responses:**
-
-- 1
-- 1
-- 1
-- 1
-- 1
+**Generated dialog:**  
+John: I don't think I can continue to work with you, Bob. Our differences have become too great.  
+Bob: What are you talking about? We've always been rivals, but we've always managed to work together. What's changed?  
+John: I'm tired of your games, Bob. You're always trying to one-up me and prove that you're better than me. It's getting
+old.  
+Bob: And what about you, John? You're always trying to outdo me too. Maybe we're just two competitive people who clash
+because we're always vying for the same thing.  
+John: Maybe that's true, but I can't keep doing this. It's not fair to either of us.  
+Bob: So what are you saying, John? You're just going to give up?  
+John: I'm not saying that. I'm just saying that I don't think we can continue working together. We're too different and
+we hurt each other too much.  
+Bob: Fine, John. If that's how you feel, then there's nothing left to say. Goodbye.  
+John: Goodbye, Bob. I'm sorry it had to end this way.  
+Bob: Maybe it's for the best. We were never really meant to be colleagues, John. We were always too different.  
+John: Yeah, you're right.Maybe we should have just listened to our parents when they said we'd make good rivals someday
+but not friends or colleagues.  
+Bob: That's probably true. Well, good luck with everything, John. I hope you find what you're looking for.  
+John: Thanks, Bob. You too.
 
 </details>
 
@@ -629,13 +596,24 @@ shortcomings, which I've managed to address in my approach.
 
 # 🚀 Call to action
 
-If this model has captured your interest, I urge you to extend your support by liking both the model and
-the [X—LLM](https://github.com/KompleteAI/xllm) library, which played an instrumental role in its development.
+**Looking for an expert in modern LLMs?** I've got the experience you need. I'll guide you through every step,
+fine-tuning everything from data collection to model training and improvement.
 
-Are you seeking a dynamic addition to your team who possesses the prowess and the know-how to train such innovative
-models? Then consider
-sharing [my CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing)
-or [LinkedIn](https://www.linkedin.com/in/boriszubarev/) with your manager.
+**Why me?** Well, with six years of experience in deep learning R&D projects, I've mastered a range of roles - from
+leading a team to rolling up my sleeves as an engineer. I've built and improved products from scratch and I'm keen to do
+the same for you.
 
-And if your team is hunting for the insights of an adept advisor to propel your projects forward, don't hesitate to
-reach out through this website: https://komplete.framer.ai
+**Worried about your team?** Don't be. With four years as a lecturer at Russia’s best university, I can equip them with
+the skills they need to succeed.
+
+**Want to know more?** Check
+out [my CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing), [LinkedIn](https://www.linkedin.com/in/boriszubarev/),
+and [past projects](https://komplete.framer.ai/cases) for the full scoop.
+
+**Ready to start?** Let's arrange a free intro meeting. I'll outline the resources we'll need to make your project a
+success.  
+[Contact me form](https://komplete.framer.ai/#contact)
+
+If you're an engineer, I'd appreciate it if you could pass
+along [my LinkedIn](https://www.linkedin.com/in/boriszubarev/) or [website](https://komplete.framer.ai/) to your
+manager.

@@ -1,7 +1,16 @@
-# 🌿 Shurale7B-v1: Narrative based chit-chat model
+---
+license: apache-2.0
+datasets:
+  - allenai/soda
+language:
+  - en
+pipeline_tag: text-generation
+---
+
+# 🌿 Shurale7B-v1-GPTQ: Narrative based chit-chat model
 
 Developed by [@BobaZooba](https://www.linkedin.com/in/boriszubarev/) |
-E-mail: [bobazooba@gmail.com](mailto:bobazooba@gmail.com)
+E-mail: [bobazooba@gmail.com](mailto:bobazooba@gmail.com)  
 Open for
 partnership: [Advising](https://komplete.framer.ai) | [CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing) | [LinkedIn](https://www.linkedin.com/in/boriszubarev/)
 
@@ -11,23 +20,25 @@ partnership: [Advising](https://komplete.framer.ai) | [CV](https://docs.google.c
 
 Model based on [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1)
 
+Quantized version of [Shurale7B-v1](https://huggingface.co/KompleteAI/Shurale7B-v1)
+
 [GitHub Repo](https://github.com/KompleteAI/shurale) | [Detailed step-by-step guide how to train this model](https://github.com/KompleteAI/shurale/blob/main/STEP-BY-STEP-GUIDE.md)
 
 [<img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/4y7RfOdhxvh1Tim99uLkW.png" alt="Chat with Shurale" width="120" height="40"/>](https://t.me/ShuraleAIBot)
 
-| **HuggingFace Hub** | **7B**                                                        | **7B-GPTQ**                                                 |
-|---------------------|---------------------------------------------------------------|-------------------------------------------------------------|
-| **Shurale-v1**      | [Link](https://huggingface.co/KompleteAI/Shurale7B-v1) (this) | [Link](https://huggingface.co/KompleteAI/Shurale7B-v1-GPTQ) |
+| **HuggingFace Hub** | **7B**                                                 | **7B-GPTQ**                                                        |
+|---------------------|--------------------------------------------------------|--------------------------------------------------------------------|
+| **Shurale-v1**      | [Link](https://huggingface.co/KompleteAI/Shurale7B-v1) | [Link](https://huggingface.co/KompleteAI/Shurale7B-v1-GPTQ) (this) |
 
 ## What is Shurale?
 
 <div align="justify">
 
-<img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/EmwEd5khHmzUTatA_tXB0.png" alt="Shurale" width="200" height="200" style="float: right; float: bottom; margin-left: 50px;" />
+  <img src="https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/EmwEd5khHmzUTatA_tXB0.png" alt="Shurale" width="200" height="200" style="float: right; float: bottom; margin-left: 50px;" />
 
 - Shurale is an open-domain dialogue model for chit-chat conversations
 - The model has the capability to establish a character and situation in the conversation
-- It's a 7B model based on [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1)
+- It's a 7B model based on Mistral7B-v0.1
 - The model was trained using 1,112,000 dialogs for 10,000 steps with a batch size of 128
 - Trained on 334 million tokens
 - Maximum length at training was 2048 tokens
@@ -35,7 +46,7 @@ Model based on [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.
 
 > Shurale [/ʃʊrɑˈlʲe/] is a forest spirit in Bashkir and Tatar mythology.
 
-[Do you want models as cool as this one?](https://huggingface.co/KompleteAI/Shurale7B-v1#🚀-call-to-action)
+[Do you want models as cool as this one?](https://huggingface.co/KompleteAI/Shurale7B-v1-GPTQ#🚀-call-to-action)
 
 </div>
 
@@ -58,37 +69,37 @@ what's happening. This usually takes the form of 2-3 sentences.
 The dialog is a series of phrases or lines from individuals involved. You just need to indicate who is saying what.
 
 <details>
-<summary>Details</summary>
+  <summary>Details</summary>
 
 Training examples consisted of both the narrative and the dialogue itself, with the participants' names clearly
 indicated.
 
-<table>
-<tr>
-<td>
-Narrative
-</td>
-<td>
-A description of the situation within the dialogue
-</td>
-</tr>
-<tr>
-<td>
-Characters names
-</td>
-<td>
-A list of names of the characters participating in the dialogue
-</td>
-</tr>
-<tr>
-<td>
-Phrases
-</td>
-<td>
-Phrases used by the participants in the dialogue
-</td>
-</tr>
-</table>
+  <table>
+    <tr>
+      <td>
+        Narrative
+      </td>
+      <td>
+        A description of the situation within the dialogue
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Characters names
+      </td>
+      <td>
+        A list of names of the characters participating in the dialogue
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Phrases
+      </td>
+      <td>
+        Phrases used by the participants in the dialogue
+      </td>
+    </tr>
+  </table>
 
 Narratives were deliberately omitted from 5% of the training examples, allowing the model to maintain a dialogue even
 without a narrative. However, using the model without a narrative is generally not recommended.
@@ -98,8 +109,8 @@ without a narrative. However, using the model without a narrative is generally n
 ## Example
 
 The baton was passed to Garry who then became the boss. He ran the show with an iron fist, making sure that everything
-was done his way. No one dared to cross him for fear of being on the receiving end of his wrath
-**Garry:** What the hell is going on around here? I thought I told you to get this place in order!
+was done his way. No one dared to cross him for fear of being on the receiving end of his wrath  
+**Garry:** What the hell is going on around here? I thought I told you to get this place in order!  
 **Bob:**
 
 In this example, we explicitly tell the model that it's now Bob's turn to speak. The end of the reply can be designated
@@ -107,14 +118,14 @@ either by a newline symbol or by the name of the first character followed by a c
 
 ### Shurale completion
 
-I'm sorry, Garry. We're just having a little trouble getting everything done the way you want it.
-**Garry:** Well, you need to fix it, and fast! I'm not going to tolerate any more slacking off! Do you understand me?
-**Bob:** Yes, Garry. I understand.
-**Garry:** Good. Now get to work and fix this mess!
-**Bob:** Yes, Garry. I'll get right on it.
+I'm sorry, Garry. We're just having a little trouble getting everything done the way you want it.  
+**Garry:** Well, you need to fix it, and fast! I'm not going to tolerate any more slacking off! Do you understand me?  
+**Bob:** Yes, Garry. I understand.  
+**Garry:** Good. Now get to work and fix this mess!  
+**Bob:** Yes, Garry. I'll get right on it.  
 **Garry:** And don't give me any lip about it either! I'm not putting up with that kind of attitude around here any
-more! Do you hear me?
-**Bob:** Yes, Garry. I hear you loud and clear. I'll get to work right away and make sure everything is done your way.
+more! Do you hear me?  
+**Bob:** Yes, Garry. I hear you loud and clear. I'll get to work right away and make sure everything is done your way.  
 **Garry:** Good. I'll be checking on you regularly to make sure that this is all getting done the way I want it! So
 don't you dare let me down!
 ---
@@ -160,44 +171,43 @@ Run model as a service using HuggingFace 🤗 inference server:
 https://github.com/huggingface/text-generation-inference#get-started
 
 <details>
-<summary>1. Start a docker container with the model</summary>
+  <summary>1. Start a docker container with the model</summary>
 
 ### Docker
 
-```bash
-model=KompleteAI/Shurale7B-v1
-volume=$PWD/data
-version=1.1.0  # please make sure you are using latest or stable version (>= 1.1.0)
+  ```bash
+  model=KompleteAI/Shurale7B-v1-GPTQ
+  volume=$PWD/data
+  version=1.1.0  # please make sure you are using latest or stable version (>= 1.1.0)
 
-docker run --gpus all --shm-size 1g -p 8080:80 -v \
+  docker run --gpus all --shm-size 1g -p 8080:80 -v \
   $volume:/data ghcr.io/huggingface/text-generation-inference:$version \
-  --model-id $model --max-batch-prefill-tokens 2048 --dtype bfloat16
-```
+  --model-id $model --max-batch-prefill-tokens 2048 --quantize gptq
+  ```
 
 ### RunPod
 
-If you want to run a model at RunPod you can find ready to use template by name "Shurale7B-v1" at RunPod. Please note
-that **port 8081** is used to run this template.
+Please note that **port 8081** is used to run this template.
 
 https://www.runpod.io/console/gpu-cloud
 
-| Field             | Value                                                                                                                       |
-|-------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| Container Image   | ghcr.io/huggingface/text-generation-inference:1.1.0                                                                         |
-| Docker Command    | --model-id KompleteAI/Shurale7B-v1 --num-shard 1 --port 8081 --max-batch-prefill-tokens 2048 --dtype bfloat16 --json-output |
-| Container Disk    | 5                                                                                                                           |
-| Volume Disk       | 15                                                                                                                          |
-| Volume Mount Path | /data                                                                                                                       |
-| Expose HTTP Ports | 8081,8080                                                                                                                   |
-| Expose TCP Ports  | 8082                                                                                                                        |
+| Field             | Value                                                                                                                           |
+  |-------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| Container Image   | ghcr.io/huggingface/text-generation-inference:1.1.0                                                                             |
+| Docker Command    | --model-id KompleteAI/Shurale7B-v1-GPTQ --num-shard 1 --port 8081 --max-batch-prefill-tokens 2048 --quantize gptq --json-output |
+| Container Disk    | 5                                                                                                                               |
+| Volume Disk       | 5                                                                                                                               |
+| Volume Mount Path | /data                                                                                                                           |
+| Expose HTTP Ports | 8081,8080                                                                                                                       |
+| Expose TCP Ports  | 8082                                                                                                                            |
 
 </details>
 
 <details>
-<summary>2. Send request to the server and parse the response</summary>
+  <summary>2. Send request to the server and parse the response</summary>
 
-```python
-import requests
+  ```python
+  import requests
 import json
 
 url = "127.0.0.1:8081/generate"
@@ -216,16 +226,16 @@ response = requests.post(url, headers=headers, data=json.dumps(data))
 
 print(response.json()["generated_text"].strip())
 # Hello, Anna! How was your evening?
-```
+  ```
 
 Or
 
-```bash
-pip install text-generation
-```
+  ```bash
+  pip install text-generation
+  ```
 
-```python
-from text_generation import Client
+  ```python
+  from text_generation import Client
 
 input_text = "Dialog between two colleagues: Emma and Anna.\nEmma:"
 
@@ -237,7 +247,7 @@ for response in client.generate_stream(input_text, max_new_tokens=20):
   if not response.token.special:
     text += response.token.text
 print(text)
-```
+  ```
 
 </details>
 
@@ -301,12 +311,12 @@ model [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1) at the
 | DeepSpeed Offloading       | True                                       |
 
 <details>
-<summary>Detailed config</summary>
+  <summary>Detailed config</summary>
 
 ### General
 
 | Field                      | Value |
-|----------------------------|-------|
+  |----------------------------|-------|
 | save_safetensors           | True  |
 | use_gradient_checkpointing | True  |
 | trainer_key                | lm    |
@@ -320,7 +330,7 @@ model [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1) at the
 ### Dataset
 
 | Field                    | Value         |
-|--------------------------|---------------|
+  |--------------------------|---------------|
 | dataset_key              | soda          |
 | train_local_path_to_data | ./train.jsonl |
 | eval_local_path_to_data  | None          |
@@ -329,7 +339,7 @@ model [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1) at the
 ### Tokenizer
 
 | Field                  | Value |
-|------------------------|-------|
+  |------------------------|-------|
 | tokenizer_name_or_path | None  |
 | tokenizer_use_fast     | None  |
 | tokenizer_padding_side | None  |
@@ -337,14 +347,14 @@ model [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1) at the
 ### Collator
 
 | Field        | Value |
-|--------------|-------|
+  |--------------|-------|
 | collator_key | lm    |
 | max_length   | 2048  |
 
 ### Model
 
 | Field                 | Value                     |
-|-----------------------|---------------------------|
+  |-----------------------|---------------------------|
 | model_name_or_path    | mistralai/Mistral-7B-v0.1 |
 | model_type            | llama                     |
 | use_flash_attention_2 | True                      |
@@ -354,7 +364,7 @@ model [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1) at the
 ### bitsandbytes
 
 | Field                          | Value |
-|--------------------------------|-------|
+  |--------------------------------|-------|
 | model_name_or_pathload_in_8bit | False |
 | load_in_4bit                   | True  |
 | llm_int8_threshold             | 6.0   |
@@ -365,7 +375,7 @@ model [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1) at the
 ### Training Arguments
 
 | Field                       | Value      |
-|-----------------------------|------------|
+  |-----------------------------|------------|
 | output_dir                  | ./outputs/ |
 | per_device_train_batch_size | 4          |
 | gradient_accumulation_steps | 4          |
@@ -384,13 +394,13 @@ model [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1) at the
 ### W&B
 
 | Field           | Value |
-|-----------------|-------|
+  |-----------------|-------|
 | report_to_wandb | True  |
 
 ### LoRA
 
 | Field               | Value |
-|---------------------|-------|
+  |---------------------|-------|
 | apply_lora          | True  |
 | lora_rank           | 64    |
 | lora_alpha          | 32    |
@@ -441,14 +451,14 @@ context = list()
 
 while True:
   user_phrase = input("You: ")
-  context.append(f"{user_prompt}: {user_phrase}")
-  model_prompt = separator.join(
-    [narrative] + context[-max_context_length:] + [f"{bot_prompt}:"]
-  )
-  generated_response = generate(model_prompt)
-  bot_phrase = f"{bot_prompt}: {generated_response}"
-  context.append(bot_phrase)
-  print(bot_phrase)
+context.append(f"{user_prompt}: {user_phrase}")
+model_prompt = separator.join(
+  [narrative] + context[-max_context_length:] + [f"{bot_prompt}:"]
+)
+generated_response = generate(model_prompt)
+bot_phrase = f"{bot_prompt}: {generated_response}"
+context.append(bot_phrase)
+print(bot_phrase)
 ```
 
 ---
@@ -456,19 +466,19 @@ while True:
 # 📋 Dialog examples
 
 <details>
-<summary>Example #1</summary>
+  <summary>Example #1</summary>
 
-**Narrative:**
+**Narrative:**  
 Mckenzi felt as though he had made a mistake as soon as he handed in his notice. His boss had been angry, and his
 co-workers disappointed. Mckenzi himself felt regretful and unsure of what the future held.
 
-**Dialog:**
-Mckenzi: I'm sorry if this comes as a surprise, but I've decided to quit.
-Boss: What? Why? Is there something wrong?
-Mckenzi: No, nothing's wrong. I just feel like it's time for a change.
+**Dialog:**  
+Mckenzi: I'm sorry if this comes as a surprise, but I've decided to quit.  
+Boss: What? Why? Is there something wrong?  
+Mckenzi: No, nothing's wrong. I just feel like it's time for a change.  
 Boss:
 
-**Original response:**
+**Original response:**  
 I see. Well, I'm sorry to hear that you're leaving. We'll miss you around here.
 
 **Shurale responses:**
@@ -486,19 +496,19 @@ I see. Well, I'm sorry to hear that you're leaving. We'll miss you around here.
 </details>
 
 <details>
-<summary>Example #2</summary>
+  <summary>Example #2</summary>
 
-**Narrative:**
+**Narrative:**  
 Kanon felt her face flush with anger. She balled up her fists, digging her nails into her palms as she glared at
 Suzette. It was all she could do to keep herself from launching across the table and strangling him.
 
-**Dialog:**
-Kanon: What the hell do you mean by that? Do you think I'm some kind of idiot?
+**Dialog:**  
+Kanon: What the hell do you mean by that? Do you think I'm some kind of idiot?  
 Suzette: No, of course not. I just think that you might not be aware of what you're getting yourself into. This whole
-thing could be a lot more complicated than you realize.
+thing could be a lot more complicated than you realize.  
 Kanon:
 
-**Original response:**
+**Original response:**  
 I'm perfectly aware of what I'm doing, thank you. And I can handle myself just fine. So don't try to tell me what to do.
 
 **Shurale responses:**
@@ -516,13 +526,13 @@ I'm perfectly aware of what I'm doing, thank you. And I can handle myself just f
 </details>
 
 <details>
-<summary>Example #3</summary>
+  <summary>Example #3</summary>
 
-**Narrative:**
+**Narrative:**  
 Kelcey is irresponsible. She often fails to finish articles she starts writing, and this has led to her being fired from
 several jobs.
 
-**Context:**
+**Context:**  
 Kelcey:
 
 **Original response:**
@@ -542,29 +552,29 @@ Hey, boss. I'm sorry I didn't finish that article you asked me to write.
 ## Out-of-distribution
 
 <details>
-<summary>Example #1</summary>
+  <summary>Example #1</summary>
 
-**Narrative:**
+**Narrative:**  
 John and Bob have always been rivals. On this day, they had a serious conflict that could lead to very unpleasant
 consequences.
 
-**Generated dialog:**
-John: I don't think I can continue to work with you, Bob. Our differences have become too great.
-Bob: What are you talking about? We've always been rivals, but we've always managed to work together. What's changed?
+**Generated dialog:**  
+John: I don't think I can continue to work with you, Bob. Our differences have become too great.  
+Bob: What are you talking about? We've always been rivals, but we've always managed to work together. What's changed?  
 John: I'm tired of your games, Bob. You're always trying to one-up me and prove that you're better than me. It's getting
-old.
+old.  
 Bob: And what about you, John? You're always trying to outdo me too. Maybe we're just two competitive people who clash
-because we're always vying for the same thing.
-John: Maybe that's true, but I can't keep doing this. It's not fair to either of us.
-Bob: So what are you saying, John? You're just going to give up?
+because we're always vying for the same thing.  
+John: Maybe that's true, but I can't keep doing this. It's not fair to either of us.  
+Bob: So what are you saying, John? You're just going to give up?  
 John: I'm not saying that. I'm just saying that I don't think we can continue working together. We're too different and
-we hurt each other too much.
-Bob: Fine, John. If that's how you feel, then there's nothing left to say. Goodbye.
-John: Goodbye, Bob. I'm sorry it had to end this way.
-Bob: Maybe it's for the best. We were never really meant to be colleagues, John. We were always too different.
+we hurt each other too much.  
+Bob: Fine, John. If that's how you feel, then there's nothing left to say. Goodbye.  
+John: Goodbye, Bob. I'm sorry it had to end this way.  
+Bob: Maybe it's for the best. We were never really meant to be colleagues, John. We were always too different.  
 John: Yeah, you're right.Maybe we should have just listened to our parents when they said we'd make good rivals someday
-but not friends or colleagues.
-Bob: That's probably true. Well, good luck with everything, John. I hope you find what you're looking for.
+but not friends or colleagues.  
+Bob: That's probably true. Well, good luck with everything, John. I hope you find what you're looking for.  
 John: Thanks, Bob. You too.
 
 </details>
@@ -602,7 +612,7 @@ out [my CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6
 and [past projects](https://komplete.framer.ai/cases) for the full scoop.
 
 **Ready to start?** Let's arrange a free intro meeting. I'll outline the resources we'll need to make your project a
-success.
+success.  
 [Contact me form](https://komplete.framer.ai/#contact)
 
 If you're an engineer, I'd appreciate it if you could pass
