@@ -39,8 +39,6 @@ Model based on [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.
 
 [Do you want models as cool as this one?](https://huggingface.co/KompleteAI/Shurale7B-v1#🚀-call-to-action)
 
----
-
 # 📝 Prompt
 
 The parts of the dialogue (narrative and phrases) are separated using a newline symbol: **\n**
@@ -117,7 +115,6 @@ more! Do you hear me?
 **Bob:** Yes, Garry. I hear you loud and clear. I'll get to work right away and make sure everything is done your way.  
 **Garry:** Good. I'll be checking on you regularly to make sure that this is all getting done the way I want it! So
 don't you dare let me down!
----
 
 # 🔧 How to use
 
@@ -240,8 +237,6 @@ print(text)
 ```
 
 </details>
-
----
 
 # 🚄 Training Process
 
@@ -403,8 +398,6 @@ model [Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1) at the
 
 ![train_loss](https://cdn-uploads.huggingface.co/production/uploads/6074d5f1134c000d1ae10d42/9Wc9ekXcX8n_xl_j_VC4x.png)
 
----
-
 # 🔐 Limitations
 
 The model was trained on a synthetic dataset generated using ChatGPT, leading to a few critical issues with the current
@@ -414,8 +407,6 @@ explicitly trained to be safe, it's likely these traits are inherited from ChatG
 dialogues is considered out-of-domain for the model since it was trained with a maximum length of 2048 tokens. The
 model's ability to generate truth-valid facts wasn't tested, but it's probable that its performance in this area lags
 behind OpenAI models. Also, this model wasn't explicitly trained to follow instructions.
-
----
 
 # 🕹 Use cases
 
@@ -450,8 +441,6 @@ while True:
   context.append(bot_phrase)
   print(bot_phrase)
 ```
-
----
 
 # 📋 Dialog examples
 
@@ -569,21 +558,15 @@ John: Thanks, Bob. You too.
 
 </details>
 
----
-
 # 🔮 Benchmark
 
 Coming soon... (maybe will be in V2)
-
----
 
 # 🛰 Future work
 
 If this model proves successful, I plan to implement an algorithm similar to DeepMind's
 ReST ([link](https://arxiv.org/pdf/2308.08998.pdf)). The mentioned work has great potential but has a number of
 shortcomings, which I've managed to address in my approach.
-
----
 
 # 🚀 Call to action
 
