@@ -160,14 +160,32 @@ python3 shurale/cli/train.py \
   --apply_lora True \
   --raw_lora_target_modules all \
   --per_device_train_batch_size 2 \
+  --gradient_accumulation_steps 4 \
   --warmup_steps 1000 \
   --save_total_limit 0 \
   --push_to_hub True \
   --hub_model_id BobaZooba/Shurale7B-v1-LoRA \
   --hub_private_repo True \
   --report_to_wandb True \
+  --logging_steps 1 \
+  --num_train_epochs 3 \
+  --save_steps 1000 \
+  --max_steps 10050 \
+  --save_safetensors True \
+  --use_gradient_checkpointing True \
+  --stabilize True \
+  --max_length 2048 \
+  --use_flash_attention_2 False \
+  --prepare_model_for_kbit_training True \
+  --load_in_4bit True \
+  --apply_lora True \
+  --label_smoothing_factor 0.1 \
   --path_to_env_file ./.env
 ```
+
+#### Pay attention to fields
+
+- hub_model_id
 
 ### Multiple GPU
 
@@ -193,22 +211,39 @@ Or directly
 ```bash
 deepspeed --num_gpus=8 shurale/cli/train.py \
   --use_gradient_checkpointing True \
-  --deepspeed_stage 2 \
-  --stabilize True \
+  --deepspeed_stage 2 --stabilize True \
   --model_name_or_path mistralai/Mistral-7B-v0.1 \
   --use_flash_attention_2 False \
   --load_in_4bit True \
   --apply_lora True \
   --raw_lora_target_modules all \
-  --per_device_train_batch_size 8 \
+  --per_device_train_batch_size 4 \
+  --gradient_accumulation_steps 4 \
   --warmup_steps 1000 \
   --save_total_limit 0 \
   --push_to_hub True \
   --hub_model_id BobaZooba/Shurale7B-v1-LoRA \
   --hub_private_repo True \
   --report_to_wandb True \
+  --logging_steps 1 \
+  --num_train_epochs 3 \
+  --save_steps 1000 \
+  --max_steps 10050 \
+  --save_safetensors True \
+  --use_gradient_checkpointing True \
+  --stabilize True \
+  --max_length 2048 \
+  --use_flash_attention_2 False \
+  --prepare_model_for_kbit_training True \
+  --load_in_4bit True \
+  --apply_lora True \
+  --label_smoothing_factor 0.1 \
   --path_to_env_file ./.env
 ```
+
+#### Pay attention to fields
+
+- hub_model_id
 
 ## 7. Fuse LoRA
 
@@ -238,8 +273,14 @@ python3 shurale/cli/fuse.py \
   --hub_private_repo True \
   --force_fp16 True \
   --fused_model_local_path ./fused_model/ \
+  --max_shard_size 1GB \
   --path_to_env_file ./.env
 ```
+
+#### Pay attention to fields
+
+- hub_model_id
+- lora_hub_model_id
 
 ## 8. [Optional] GPTQ quantization
 
@@ -262,14 +303,19 @@ python3 shurale/cli/gptq_quantize.py \
   --model_name_or_path ./fused_model/ \
   --apply_lora False \
   --stabilize False \
-  --quantization_max_samples 100000 \
+  --quantization_max_samples 64 \
   --quantized_model_path ./quantized_model/ \
   --prepare_model_for_kbit_training False \
   --quantized_hub_model_id BobaZooba/Shurale7B-v1-GPTQ \
   --quantized_hub_private_repo True \
-  --low_cpu_mem_usage \
+  --low_cpu_mem_usage True \
   --path_to_env_file ./.env
 ```
+
+#### Pay attention to fields
+
+- hub_model_id
+- quantized_hub_model_id
 
 ## 9. 🎉 Done! You are awesome!
 
@@ -284,22 +330,26 @@ tokenizer = AutoTokenizer.from_pretrained("BobaZooba/Shurale7B-v1")
 model = AutoModelForCausalLM.from_pretrained("BobaZooba/Shurale7B-v1")
 ```
 
-## 💼 If you want models as cool as this one
+## 🚀 Call to action
 
-### X—LLM
+**Looking for an expert in modern LLMs?** I've got the experience you need. I'll guide you through every step,
+fine-tuning everything from data collection to model training and improvement.
 
-The training of this model utilized the [X—LLM](https://github.com/KompleteAI/xllm) library. This tool makes it easy to
-finetune large language models using cutting-edge methods like bitsandbytes int4, QLoRA, DeepSpeed, Flash Attention 2,
-and so on. You can effortlessly integrate this library into your projects.
+**Why me?** Well, with six years of experience in deep learning R&D projects, I've mastered a range of roles - from
+leading a team to rolling up my sleeves as an engineer. I've built and improved products from scratch and I'm keen to do
+the same for you.
 
-### Advisor
+**Worried about your team?** Don't be. With four years as a lecturer at Russia’s best university, I can equip them with
+the skills they need to succeed.
 
-And if your team is hunting for the insights of an adept advisor to propel your projects forward, don't hesitate to
-reach out through this website: https://komplete.framer.ai
+**Want to know more?** Check
+out [my CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing), [LinkedIn](https://www.linkedin.com/in/boriszubarev/),
+and [past projects](https://komplete.framer.ai/cases) for the full scoop.
 
-### New team member
+**Ready to start?** Let's arrange a free intro meeting. I'll outline the resources we'll need to make your project a
+success.
+[Contact me form](https://komplete.framer.ai/#contact)
 
-Are you seeking a dynamic addition to your team who possesses the prowess and the know-how to train such innovative
-models? Then consider
-sharing [my CV](https://docs.google.com/document/d/1BhFvIHQ1mpm81P-n2A-lhNac-U2wOGc6F2uS9gKvk88/edit?usp=sharing)
-or [LinkedIn](https://www.linkedin.com/in/boriszubarev/) with your manager.
+If you're an engineer, I'd appreciate it if you could pass
+along [my LinkedIn](https://www.linkedin.com/in/boriszubarev/) or [website](https://komplete.framer.ai/) to your
+manager.
